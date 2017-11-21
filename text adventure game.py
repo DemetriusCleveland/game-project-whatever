@@ -3,3 +3,4 @@ abandoned college, Sammy Systems University. Arriving on campus, the calm, Fall 
 eerie. After paying the Uber driver,with no tip, he arrives on the campus "Just Talk" area and cleans up
 his mess.
 '''
+#Nerd Shit
