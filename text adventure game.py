@@ -1,6 +1,15 @@
-def map():
-    '''This function is called simply to display the map.'''
-    return 0
+def grid_maker(h, w):
+    '''This function is called make a map.'''
+    grid = [["-" for i in range(w)] for i in range(h)]
+    grid[0][0] = "o"
+    return grid
+
+def print_grid(grid):
+    """To display the map"""
+    for row in grid:
+        for e in row:
+            print(e)
+        print
 
 def pickItem(item, itemList):
     '''Once an item is obtained, this function can be called to select it from a menu.'''
