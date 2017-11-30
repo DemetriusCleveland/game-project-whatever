@@ -1,15 +1,4 @@
 import random
-def map(list):
-    #Makes the map
-    for lists in list:
-        for i in lists:
-            print(i,end='\t')
-        print()
-#The map design
-plan=['Mu','-','-','-','Fi'],['-','-','-','Eg','-'],['-','-','-','-','Sw'],['-','Re','-','-','-'],['-','-','-','En','-']
-def checkMapPos():
-    return 0
-
 francis=["francis", "the hero", 100, 10, "Punch", 5, 2, "Kick", 10, 4, 50, random.randint(0, 100), 20]
 francis_pos=[0,0]
 items=[]#At the start, the item is empty
@@ -23,6 +12,18 @@ elif crackhead[2]<10:
     print("")
 elif crackhead[2]<5:
     crackhead[6]=16
+#The map design
+plan=['Mu','-','-','-','Fi'],['-','-','-','Eg','-'],['-','-','-','-','Sw'],['-','Re','-','-','-'],['-','-','-','En','-']
+
+def map(list):
+    #Makes the map
+    for lists in list:
+        for i in lists:
+            print(i,end='\t')
+        print()
+
+def checkMapPos():
+    return 0
 
 def pickItem(item, itemList):
     '''Once an item is obtained, this function can be called to select it from a menu.'''
@@ -101,14 +102,42 @@ def start():
         print('The game has ended, quiter!')
 
 def Rec():
+    i=0
+    j=0
+    an=''
     francis_pos=(1,3)
-    print('You are at the Rec center. Memories of your high school dodgeball games haunt you and dried sweat is visible on the floor.')
+    print('You are at the Rec center. Memories of your high school dodge ball games haunt you and dried sweat is visible on the floor.')
+    print('[1]Coach Office')
+    print('[2]Equipment Room')
+    print('[3]Bathroom')
+    an=input(print('Where do you want to go now?: '))
+    if an == '1':
+        while i<10:
+            print("You are in a place you hoped to never be in again and find some pills and a flashlight")
+            pickItem("pills", items)
+            pickItem("flashlight", items)
+            i=20
+            Rec()
+    if an == '2':
+        while j<10:
+            print("As the place impiles, there are some supplies, broom sticks and spray bottles.")
+            print('[B]room Sticks')
+            print('[S]spray Bottles')
+            ans=input(print("Which one do you want: "))
+            if ans=='b':
+                pickItem("brook stick", items)
+            if ans=='s':
+                pickItem("spray bottle", items)
+            j=20
+            Rec()
+
+
 
 def Swant():
     print('you are at swant hall')
 
 def Eng():
-    print('you are at enginnering bldg')
+    print('you are at engineering bldg')
 
 def Field():
     print('you are at the field')
@@ -153,5 +182,5 @@ his mess.
 "Make a function called map move, moves the x where its susppse to go, and allow the user, inside the function; end of function, " \
 "have a request to access a full_game function, has 25 ifs to check place at 00 is x or 01 is x"
 
-#start()
-map(plan)
+start()
+#map(plan)
