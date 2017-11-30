@@ -3,7 +3,7 @@ francis=["francis", "the hero", 100, 10, "Punch", 5, 2, "Kick", 10, 4, 50, rando
 francis_pos=[0,0]
 items=[]#At the start, the item is empty
 crackhead=['crackhead', 'he needs his fix', 20, 5, "Injection", 2, 4, 'Scratch', 100, 1.5, 30, random.randint(0, 100), 5]
-# [Name, description/hint, HP, baseATK, attack1Name, attack1Uses, attack1Multiplier, attack2Name, attack2Uses, attack2Multiplier, baseDEF, luck(multiplier 0->1), gold]
+# [Name, description/hint, HP, baseATK, attack1Name, attack1Uses, attack1Multiplier, attack2Name, attack2Uses, attack2Multiplier, baseDEF, luck(multiplier 0->100), gold]
 if  crackhead[2]<15:
     crackhead[6]=8
     print("The crackhead attackmultiplier is now 8.")
@@ -97,6 +97,11 @@ def start():
     print('[Z]Quit Game')
     ans=input(print("Choice: "))
     if ans=='q':
+        print('''Francis Magilicutty, private eye, receives a case of a missing girl said to be spotted near an 
+        abandoned college, Sammy Systems University. Arriving on campus's entrande, the calm, Fall climate was nothing but
+        eerie. After paying the Uber driver, with no tip, he arrives on the campus "Just Talk" area and cleans up
+        his mess.
+        ''')
         game()
     else:
         print('The game has ended, quiter!')
@@ -104,12 +109,14 @@ def start():
 def Rec():
     i=0
     j=0
+    k=0
     an=''
     francis_pos=(1,3)
     print('You are at the Rec center. Memories of your high school dodge ball games haunt you and dried sweat is visible on the floor.')
     print('[1]Coach Office')
     print('[2]Equipment Room')
     print('[3]Bathroom')
+    print("[4]Leave")
     an=input(print('Where do you want to go now?: '))
     if an == '1':
         while i<10:
@@ -130,14 +137,30 @@ def Rec():
                 pickItem("spray bottle", items)
             j=20
             Rec()
-
-
+    if an == '3':
+        while k<10:
+            print("This is the girl's bathroom perv, who were you expecting to be in there. ")
+            k=20
+            Rec()
+    if an=='4':
+        game()
 
 def Swant():
     print('you are at swant hall')
 
 def Eng():
-    print('you are at engineering bldg')
+    x=0
+    print('You are at the Engineering Building. Surprisingly, the nerd smell still remains.')
+    print('[1]Chemical Engineering Room')
+    an=input(print('Where do you want to go now?: '))
+    if an==1:
+        while x<10:
+            print("Looking like an ordinary chem, you see some chemical that might ")
+            x=20
+    else:
+        print("The only option is 1 retard.")
+        Eng()
+
 
 def Field():
     print('you are at the field')
@@ -148,11 +171,6 @@ def Muse():
 def game():
     i=0
     francis_pos=[3,4]
-    print('''Francis Magilicutty, private eye, receives a case of a missing girl said to be spotted near an 
-abandoned college, Sammy Systems University. Arriving on campus's entrande, the calm, Fall climate was nothing but
-eerie. After paying the Uber driver, with no tip, he arrives on the campus "Just Talk" area and cleans up
-his mess.
-''')
     while i<1:
         print("[en]trance")
         print("[re]c")
