@@ -48,5 +48,5 @@ def doomsday(attacker,defender):
         #we should make our character fight a crackhead who's attack multipliers rise as its HP decreases
         #
         #      
-    
+
     
