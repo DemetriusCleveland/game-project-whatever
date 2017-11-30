@@ -155,7 +155,13 @@ def Eng():
     an=input(print('Where do you want to go now?: '))
     if an==1:
         while x<10:
-            print("Looking like an ordinary chem, you see some chemical that might ")
+            choice=input(print("Looking like an ordinary chem, you see some chemical that might come in handy. Do you want it(y/n): "))
+            if choice=='y':
+                pickItem("chemical", items)
+                print("As soon as you were about leave, a wild crackhead appeared. He asks you 'Do you the fix?'. You reply with 'No',"
+                      "being the good dank master you are. He pulls out a needle, ready   ")
+            else:
+                print("I guess you won't need that will you.")
             x=20
     else:
         print("The only option is 1 retard.")
