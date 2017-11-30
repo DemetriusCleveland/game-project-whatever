@@ -1,14 +1,15 @@
+#The map design
+plan=['Mu','-','-','-','Fi'],['-','-','-','Eg','-'],['-','-','-','-','Sn'],['-','Re','-','-','-'],['-','-','-','En','-']
 francis=["francis", "the hero", 100, 10, "Punch", 5, 2, "Kick", 10, 4, 50, 'luck(multiplier 0->1)']
 items=[]#At the start, the item is empty
 crackhead=['crackhead', 'he needs his fix', 20, 5, "Injection", 2, 4, 'Scratch', 100, 1.5, 30, 'luck(multiplier 0->1)']
-if  crackhead[3]<15:
-    crackhead[4]=8
-elif crackhead[3]<10:
-    crackhead[4]=12
-elif crackhead[3]<5:
-    crackhead[4]=16
-#The map design
-plan=['Mu','-','-','-','Fi'],['-','-','-','Eg','-'],['-','-','-','-','Sn'],['-','Re','-','-','-'],['-','-','-','En','-']
+# [Name, description/hint, HP, baseATK, attack1Name, attack1Uses, attack1Multiplier, attack2Name, attack2Uses, attack2Multiplier, baseDEF, luck(multiplier 0->1)]
+if  crackhead[2]<15:
+    crackhead[6]=8
+elif crackhead[2]<10:
+    crackhead[6]=12
+elif crackhead[2]<5:
+    crackhead[6]=16
 
 def pickItem(item, itemList):
     '''Once an item is obtained, this function can be called to select it from a menu.'''
@@ -26,8 +27,6 @@ def restartAfterDeath(answer):
 def checkStats():
     print(francis)
 
-# for now, we'll make character stat distribution in list as follows:
-# [Name, description/hint, HP, baseATK, attack1Name, attack1Uses, attack1Multiplier, attack2Name, attack2Uses, attack2Multiplier, baseDEF, luck(multiplier 0->1)]
 # attacker and defender objects are lists with their stats, preassigned from character status
 
 # separating into two combats for attack1 and attack2
@@ -54,8 +53,7 @@ def combat2(attacker, defender):
 # doomsday() is a function that handles the procedure when a char's HP drops to zero or below zero. Luck multiplier is
 # used to see if he survives with 1hp
 def doomsday(attacker, defender):
-    print(
-    "The defender is badly wounded and at the doors of death. In his last efforts, he hopes his luck will give him a second breath...")
+    print("The defender is badly wounded and at the doors of death. In his last efforts, he hopes his luck will give him a second breath...")
     # random.randint(0,100) makes a random number including 0 to including 100. attacker/defender[11] is the luck multiplier
     deathNumA = ((random.randint(0, 100)) * attacker[11]) / 1  # "/1" to round to nearest whole number
     deathNumD = ((random.randint(0, 100)) * defender[11]) / 1
@@ -65,11 +63,6 @@ def doomsday(attacker, defender):
     elif deathNumB > deathNumA:
         print("Despite all odds, a miracle of luck recovers the fallen defender, reviving him with 1HP")
         print(defender[0] + " has been revived with 1HP.")
-
-        # IDEAS
-        # we should make our character fight a crackhead who's attack multipliers rise as its HP decreases
-        #
-        #
 
 def map(list):
     #Makes the map
@@ -84,4 +77,4 @@ eerie. After paying the Uber driver,with no tip, he arrives on the campus "Just 
 his mess.
 '''
 
-
+checkStats()
