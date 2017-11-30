@@ -6,10 +6,14 @@ def map(list):
             print(i,end='\t')
         print()
 #The map design
-plan=['Mu','-','-','-','Fi'],['-','-','-','Eg','-'],['-','-','-','-','Sn'],['-','Re','-','-','-'],['-','-','-','En','-']
-francis=["francis", "the hero", 100, 10, "Punch", 5, 2, "Kick", 10, 4, 50, (random.randint(0, 100)), 20]
+plan=['Mu','-','-','-','Fi'],['-','-','-','Eg','-'],['-','-','-','-','Sw'],['-','Re','-','-','-'],['-','-','-','En','-']
+def checkMapPos():
+    return 0
+
+francis=["francis", "the hero", 100, 10, "Punch", 5, 2, "Kick", 10, 4, 50, random.randint(0, 100), 20]
+francis_pos=[0,0]
 items=[]#At the start, the item is empty
-crackhead=['crackhead', 'he needs his fix', 20, 5, "Injection", 2, 4, 'Scratch', 100, 1.5, 30, (random.randint(0, 100)), 5]
+crackhead=['crackhead', 'he needs his fix', 20, 5, "Injection", 2, 4, 'Scratch', 100, 1.5, 30, random.randint(0, 100), 5]
 # [Name, description/hint, HP, baseATK, attack1Name, attack1Uses, attack1Multiplier, attack2Name, attack2Uses, attack2Multiplier, baseDEF, luck(multiplier 0->1), gold]
 if  crackhead[2]<15:
     crackhead[6]=8
@@ -84,13 +88,70 @@ def doomsday(attacker, defender):
     elif deathNumB > deathNumA:
         print("Despite all odds, a miracle of luck recovers the fallen defender, reviving him with 1HP")
         print(defender[0] + " has been revived with 1HP.")
+        defender[2]+=1
 
-'''Francis Magilicutty, private eye, receives a case of a missing girl said to be spotted near an 
-abandoned college, Sammy Systems University. Arriving on campus, the calm, Fall climate was nothing by 
-eerie. After paying the Uber driver,with no tip, he arrives on the campus "Just Talk" area and cleans up
+def start():
+    print("The case of the missing girl in a abandoned college campus(Get better name)")
+    print('[Q]Start Game')
+    print('[Z]Quit Game')
+    ans=input(print("Choice: "))
+    if ans=='q':
+        game()
+    else:
+        print('The game has ended, quiter!')
+
+def Rec():
+    francis_pos=(1,3)
+    print('You are at the Rec center. Memories of your high school dodgeball games haunt you and dried sweat is visible on the floor.')
+
+def Swant():
+    print('you are at swant hall')
+
+def Eng():
+    print('you are at enginnering bldg')
+
+def Field():
+    print('you are at the field')
+
+def Muse():
+    print('you are at the museum')
+
+def game():
+    i=0
+    francis_pos=[3,4]
+    print('''Francis Magilicutty, private eye, receives a case of a missing girl said to be spotted near an 
+abandoned college, Sammy Systems University. Arriving on campus's entrande, the calm, Fall climate was nothing but
+eerie. After paying the Uber driver, with no tip, he arrives on the campus "Just Talk" area and cleans up
 his mess.
-'''
+''')
+    while i<1:
+        print("[en]trance")
+        print("[re]c")
+        print("[sw]ant")
+        print("[eg]ineering")
+        print("[fi]eld")
+        print("[mu]seum")
+        ans=input(print("Where do you want to go?: "))
+        if ans=='en':
+            print("You're already here, stupid.")
+        if ans=='re':
+            i=2
+            Rec()
+        if ans=='sw':
+            i = 2
+            Swant()
+        if ans=='eg':
+            i = 2
+            Eng()
+        if ans=='fi':
+            i = 2
+            Field()
+        if ans=='mu':
+            i = 2
+            Muse()
 
 "Make a function called map move, moves the x where its susppse to go, and allow the user, inside the function; end of function, " \
-"have a request to access a full_game function, has 25 ifs to check place at 00 is x or 01 is x, that part of story is going through" \
-"with flavor text explaining what is going on and going to happen"
+"have a request to access a full_game function, has 25 ifs to check place at 00 is x or 01 is x"
+
+#start()
+map(plan)
