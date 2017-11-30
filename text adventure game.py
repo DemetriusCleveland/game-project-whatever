@@ -125,3 +125,4 @@ while True:
         print("'[insert name] stats'..........displays known stats of person selected. unknown stats will show up as '???'")
 
     elif userInput == "move north" and gpsGrid[2][3]:
+        #all the engineering building stuff (he enters)
