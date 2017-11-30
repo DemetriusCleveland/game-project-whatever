@@ -1,13 +1,21 @@
+def map(list):
+    #Makes the map
+    for lists in list:
+        for i in lists:
+            print(i,end='\t')
+        print()
 #The map design
 plan=['Mu','-','-','-','Fi'],['-','-','-','Eg','-'],['-','-','-','-','Sn'],['-','Re','-','-','-'],['-','-','-','En','-']
-francis=["francis", "the hero", 100, 10, "Punch", 5, 2, "Kick", 10, 4, 50, 'luck(multiplier 0->1)']
+francis=["francis", "the hero", 100, 10, "Punch", 5, 2, "Kick", 10, 4, 50, 'luck(multiplier 0->1)', 20]
 items=[]#At the start, the item is empty
-crackhead=['crackhead', 'he needs his fix', 20, 5, "Injection", 2, 4, 'Scratch', 100, 1.5, 30, 'luck(multiplier 0->1)']
-# [Name, description/hint, HP, baseATK, attack1Name, attack1Uses, attack1Multiplier, attack2Name, attack2Uses, attack2Multiplier, baseDEF, luck(multiplier 0->1)]
+crackhead=['crackhead', 'he needs his fix', 20, 5, "Injection", 2, 4, 'Scratch', 100, 1.5, 30, 'luck(multiplier 0->1)', 5]
+# [Name, description/hint, HP, baseATK, attack1Name, attack1Uses, attack1Multiplier, attack2Name, attack2Uses, attack2Multiplier, baseDEF, luck(multiplier 0->1), gold]
 if  crackhead[2]<15:
     crackhead[6]=8
+    print("The crackhead attackmultiplier is now 8.")
 elif crackhead[2]<10:
     crackhead[6]=12
+    print("")
 elif crackhead[2]<5:
     crackhead[6]=16
 
@@ -24,8 +32,10 @@ def restartAfterDeath(answer):
     else:
         print("Quit the game")
 
-def checkStats():
-    print(francis)
+def checkStats(): #fix this
+    [Name, description / hint, HP, baseATK, attack1Name, attack1Uses, attack1Multiplier, attack2Name, attack2Uses,
+     attack2Multiplier, baseDEF, luck(multiplier 0->1), gold]
+    print("Name: ", francis[0])
 
 # attacker and defender objects are lists with their stats, preassigned from character status
 
@@ -56,7 +66,7 @@ def doomsday(attacker, defender):
     print("The defender is badly wounded and at the doors of death. In his last efforts, he hopes his luck will give him a second breath...")
     # random.randint(0,100) makes a random number including 0 to including 100. attacker/defender[11] is the luck multiplier
     deathNumA = ((random.randint(0, 100)) * attacker[11]) / 1  # "/1" to round to nearest whole number
-    deathNumD = ((random.randint(0, 100)) * defender[11]) / 1
+    deathNumB = ((random.randint(0, 100)) * defender[11]) / 1
     if deathNumA > deathNumB:
         print("Battered and bruised, the defender is unable to recover before the attacker throws his killing blow.")
         print(defender[0] + " has died.")
@@ -64,17 +74,14 @@ def doomsday(attacker, defender):
         print("Despite all odds, a miracle of luck recovers the fallen defender, reviving him with 1HP")
         print(defender[0] + " has been revived with 1HP.")
 
-def map(list):
-    #Makes the map
-    for lists in list:
-        for i in lists:
-            print(i,end='\t')
-        print()
-
 '''Francis Magilicutty, private eye, receives a case of a missing girl said to be spotted near an 
 abandoned college, Sammy Systems University. Arriving on campus, the calm, Fall climate was nothing by 
 eerie. After paying the Uber driver,with no tip, he arrives on the campus "Just Talk" area and cleans up
 his mess.
 '''
 
+"Make a function called map move, moves the x where its susppse to go, and allow the user, inside the function; end of function, " \
+"have a request to access a full_game function, has 25 ifs to check place at 00 is x or 01 is x, that part of story is going through" \
+"with flavor text explaining what is going on and going to happen"
 
+checkStats()
