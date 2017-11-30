@@ -1,6 +1,8 @@
-francis=["francis", "the hero", 100, 10, "Punch", 5, 2, "Kick", 10, 4, 50, luck(multiplier 0->1)]
+francis=["francis", "the hero", 100, 10, "Punch", 5, 2, "Kick", 10, 4, 50, 'luck(multiplier 0->1)']
 items=[]#At the start, the item is empty
 enemy1=["enemy1"]
+#The map design
+plan=['Mu','-','-','-','Fi'],['-','-','-','Eg','-'],['-','-','-','-','Sn'],['-','Re','-','-','-'],['-','-','-','En','-']
 
 def showMap():
     return 0
@@ -65,6 +67,14 @@ def doomsday(attacker, defender):
         # we should make our character fight a crackhead who's attack multipliers rise as its HP decreases
         #
         #
+
+def map(list):
+    #Makes the map
+    for lists in list:
+        for i in lists:
+            print(i,end='\t')
+        print()
+
 '''Francis Magilicutty, private eye, receives a case of a missing girl said to be spotted near an 
 abandoned college, Sammy Systems University. Arriving on campus, the calm, Fall climate was nothing by 
 eerie. After paying the Uber driver,with no tip, he arrives on the campus "Just Talk" area and cleans up
