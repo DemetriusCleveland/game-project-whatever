@@ -1,11 +1,14 @@
 francis=["francis", "the hero", 100, 10, "Punch", 5, 2, "Kick", 10, 4, 50, 'luck(multiplier 0->1)']
 items=[]#At the start, the item is empty
-enemy1=["enemy1"]
+crackhead=['crackhead', 'he needs his fix', 20, 5, "Injection", 2, 4, 'Scratch', 100, 1.5, 30, 'luck(multiplier 0->1)']
+if  crackhead[3]<15:
+    crackhead[4]=8
+elif crackhead[3]<10:
+    crackhead[4]=12
+elif crackhead[3]<5:
+    crackhead[4]=16
 #The map design
 plan=['Mu','-','-','-','Fi'],['-','-','-','Eg','-'],['-','-','-','-','Sn'],['-','Re','-','-','-'],['-','-','-','En','-']
-
-def showMap():
-    return 0
 
 def pickItem(item, itemList):
     '''Once an item is obtained, this function can be called to select it from a menu.'''
