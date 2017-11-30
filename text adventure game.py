@@ -1,3 +1,4 @@
+import random
 def map(list):
     #Makes the map
     for lists in list:
@@ -6,9 +7,9 @@ def map(list):
         print()
 #The map design
 plan=['Mu','-','-','-','Fi'],['-','-','-','Eg','-'],['-','-','-','-','Sn'],['-','Re','-','-','-'],['-','-','-','En','-']
-francis=["francis", "the hero", 100, 10, "Punch", 5, 2, "Kick", 10, 4, 50, 'luck(multiplier 0->1)', 20]
+francis=["francis", "the hero", 100, 10, "Punch", 5, 2, "Kick", 10, 4, 50, (random.randint(0, 100)), 20]
 items=[]#At the start, the item is empty
-crackhead=['crackhead', 'he needs his fix', 20, 5, "Injection", 2, 4, 'Scratch', 100, 1.5, 30, 'luck(multiplier 0->1)', 5]
+crackhead=['crackhead', 'he needs his fix', 20, 5, "Injection", 2, 4, 'Scratch', 100, 1.5, 30, (random.randint(0, 100)), 5]
 # [Name, description/hint, HP, baseATK, attack1Name, attack1Uses, attack1Multiplier, attack2Name, attack2Uses, attack2Multiplier, baseDEF, luck(multiplier 0->1), gold]
 if  crackhead[2]<15:
     crackhead[6]=8
@@ -32,10 +33,20 @@ def restartAfterDeath(answer):
     else:
         print("Quit the game")
 
-def checkStats(): #fix this
-    [Name, description / hint, HP, baseATK, attack1Name, attack1Uses, attack1Multiplier, attack2Name, attack2Uses,
-     attack2Multiplier, baseDEF, luck(multiplier 0->1), gold]
+def checkStats():
     print("Name: ", francis[0])
+    print('Description: ', francis[1])
+    print('HP: ', francis[2])
+    print("BaseATK: ", francis[3])
+    print('attack1Name: ', francis[4])
+    print('attack1Uses: ', francis[5])
+    print('attack1Multiplier: ', francis[6])
+    print('attack2Name: ', francis[7])
+    print('attack2Uses: ', francis[8])
+    print('attack2Multiplier: ', francis[9])
+    print('baseDEF: ', francis[10])
+    print('luck: ', francis[11])
+    print('gold: ', francis[12])
 
 # attacker and defender objects are lists with their stats, preassigned from character status
 
@@ -83,5 +94,3 @@ his mess.
 "Make a function called map move, moves the x where its susppse to go, and allow the user, inside the function; end of function, " \
 "have a request to access a full_game function, has 25 ifs to check place at 00 is x or 01 is x, that part of story is going through" \
 "with flavor text explaining what is going on and going to happen"
-
-checkStats()
